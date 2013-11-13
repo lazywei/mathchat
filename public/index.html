@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="roomApp">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/controllers/messagesCtrl.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+      html {
+        overflow: hidden;
+      }
+
+      body {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: gray;
+      }
+
+      #mesgs {
+        background: white;
+        margin: 0;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        position: absolute;
+        top: 0.5em;
+        left: 0.5em;
+        right: 0.5em;
+        bottom: 3em;
+        overflow: auto;
+      }
+
+      #form {
+        padding: 0 0.5em 0 0.5em;
+        margin: 0;
+        position: absolute;
+        bottom: 1em;
+        left: 0px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+    </style>
+  </head>
+  <body ng-controller="MessagesCtrl" ng-init="connect()">
+    <div id="mesgs">
+      <div ng-repeat="message in messages">
+        {{ message }}
+      </div>
+    </div>
+    <form id="form" action="">
+      <button ng-click="send()" class="btn">send</button>
+      <input type="text" ng-model="text" id="msg" size="64"/>
+    </form>
+  </body>
+</html>
