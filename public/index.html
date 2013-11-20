@@ -48,7 +48,7 @@
   <body ng-controller="MessagesCtrl" ng-init="connect()">
     <div id="mesgs">
       <div ng-repeat="message in messages">
-        {{ message }}
+        {{ message.content }} - {{ message.time | date: 'medium' }}
       </div>
     </div>
     <form id="form" action="">

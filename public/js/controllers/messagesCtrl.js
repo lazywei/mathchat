@@ -2,7 +2,10 @@ roomApp.controller('MessagesCtrl', function($scope, ChatService) {
   $scope.messages = [];
 
   ChatService.subscribe(function(message) {
-    $scope.messages.push(message);
+    $scope.messages.push({
+      time: new Date(),
+      content: message
+    });
     $scope.$apply();
   });
 

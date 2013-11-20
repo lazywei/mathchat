@@ -15,7 +15,7 @@ var addr = flag.String("addr", ":8080", "http service address")
 func main() {
 	flag.Parse()
 	go h.run()
-	http.Handle("/", http.FileServer(http.Dir("/Users/lazywei/go/src/github.com/lazywei/ws-exp/public")))
+	http.Handle("/", http.FileServer(http.Dir("./public")))
 	http.HandleFunc("/ws", serveWs)
 
 	err := http.ListenAndServe(*addr, nil)
