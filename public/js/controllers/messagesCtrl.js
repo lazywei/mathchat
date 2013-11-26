@@ -7,6 +7,9 @@ roomApp.controller('MessagesCtrl', function($scope, ChatService) {
       content: message
     });
     $scope.$apply();
+    if (typeof(MathJax) != "undefined") {
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
   });
 
   $scope.connect = function() {
