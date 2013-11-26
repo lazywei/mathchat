@@ -1,0 +1,3 @@
+div.message:nth-child(odd) {
+  background: #CACACC;
+}

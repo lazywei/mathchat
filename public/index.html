@@ -21,7 +21,7 @@
         background: gray;
       }
 
-      #mesgs {
+      #chat-box {
         background: white;
         margin: 0;
         padding: 0.5em 0.5em 0.5em 0.5em;
@@ -44,11 +44,12 @@
       }
 
     </style>
+    <link rel="stylesheet" type="text/css" href="css/message.css" />
   </head>
   <body ng-controller="MessagesCtrl" ng-init="connect()">
-    <div id="mesgs">
-      <div ng-repeat="message in messages">
-        {{ message.content }} - {{ message.time | date: 'medium' }}
+    <div id="chat-box">
+      <div ng-repeat="message in messages" class="message">
+          {{ message.content }} {{ message.time | date: 'HH:mm' }}
       </div>
     </div>
     <form id="form" action="">
@@ -57,6 +58,11 @@
     </form>
     <script type="text/javascript"
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript" charset="utf-8">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
     </script>
   </body>
 </html>
